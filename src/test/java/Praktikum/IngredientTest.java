@@ -1,8 +1,8 @@
 package Praktikum;
 
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
+import static org.junit.Assert.assertEquals;
 
 public class IngredientTest {
 
@@ -24,6 +24,7 @@ public class IngredientTest {
         assertEquals(IngredientType.SAUCE, ingredient.getType());
     }
 }
+
 
 
 

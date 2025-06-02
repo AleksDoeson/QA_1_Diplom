@@ -1,32 +1,33 @@
 package Praktikum;
 
+import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 public class BunTest {
 
-    @Test
-    public void testBunConstructor() {
-        // Тестируем конструктор булочки
-        Bun bun = new Bun("Sesame Bun", 50.0f);
-        assertEquals("Название булки должно быть корректным", "Sesame Bun", bun.getName());
-        assertEquals("Цена булки должна быть корректной", 50.0f, bun.getPrice(), 0.01f);  // Указание погрешности
+    private Bun bun;
+
+    @Before
+    public void setUp() {
+        // Инициализируем объект перед каждым тестом
+        bun = new Bun("Sesame Bun", 50.0f);
     }
 
     @Test
-    public void testGetName() {
-        // Тестируем метод getName
-        Bun bun = new Bun("Sesame Bun", 50.0f);
-        assertEquals("Метод getName должен возвращать правильное название", "Sesame Bun", bun.getName());
+    public void getNameReturnsCorrectName() {
+        // Проверяем, что getName возвращает корректное имя
+        assertEquals("Sesame Bun", bun.getName());
     }
 
     @Test
-    public void testGetPrice() {
-        // Тестируем метод getPrice
-        Bun bun = new Bun("Sesame Bun", 50.0f);
-        assertEquals("Метод getPrice должен возвращать правильную цену", 50.0f, bun.getPrice(), 0.01f);  // Указание погрешности
+    public void getPriceReturnsCorrectPrice() {
+        // Проверяем, что getPrice возвращает корректную цену
+        assertEquals(50.0f, bun.getPrice(), 0.01f);
     }
 }
+
 
 
 
